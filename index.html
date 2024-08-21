@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retru Furum</title>
+    <!-- tailwind css and daisy ui  -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+</head>
+<body class="container mx-auto p-7">
+    <!-- header  -->
+    <header>
+        <!-- navbar -->
+        <nav class="flex justify-between">
+            <div><img src="./images/logo.png" alt=""></div>
+            <div class="flex items-center  lg:space-x-5">
+                <div class="tooltip" data-tip="Home">
+                    <button class="btn rounded-3xl hidden lg:block "><img src="./images/Vector (2).png" alt=""></button>
+                  </div>
+                  <div class="tooltip" data-tip="edit">
+                    <button class="btn rounded-3xl hidden lg:block "><img src="./images/Vector (3).png" alt=""></button>
+                  </div>
+                  <div class="tooltip" data-tip="add">
+                    <button class="btn rounded-3xl hidden lg:block "><img src="./images/Vector (4).png" alt=""></button>
+                  </div>
+                  <div class="tooltip" data-tip="flag">
+                    <button class="btn rounded-3xl hidden lg:block "><img src="./images/Vector (5).png" alt=""></button>
+                  </div>
+            
+                <button class="btn bg-[#797DFC] text-white font-bold text-xl rounded-3xl px-8">Sign in</button>
+            </div>
+        </nav>
+
+        <!-- her0 section -->
+         <section class="mt-10 lg:mt-20 text-white ">
+            <div style="background-image: url(./images/bgbanner.png)" class="w-[] h-full p-6 bg-no-repeat bg-[#12132D] grid grid-cols-1 lg:flex justify-between rounded-l-2xl rounded-r-2xl">
+
+                <div class="space-y-6">
+                    <h1 class="text-6xl font-bold">Welcome to the <br> <span class="text-blue-500">ReTro</span> Forum</h1>
+                    <p class="opacity-0.4">Share your favorite opinion and win and wp forum coffee mug!</p>
+                    <div class="bg-white px-1 lg:px-3 w-[90%] lg:w-[100%]  lg:px-5 flex items-center rounded-full">
+                        <input  class="text-xs text-black lg:text-xl border-none outline-none px-5 lg:px-9" type="text" placeholder="search here anything" id="searchField">
+                        <button onclick="searchHandle()" class="btn px-5 lg:px-10 rounded-full bg-[#797DFC]">search</button> 
+                    </div>
+                </div>
+                <div class="hidden lg:block"><img src="./images/Frame 9.png" alt=""></div>
+            </div>
+         </section>
+    </header>
+
+    <!-- main -->
+    <main>
+        <h1 class="text-2xl lg:text-5xl text-center mt-10 lg:mt-20 font-bold">Let’s Discuss</h1>
+        <p class="text-center mb-10 lg:mb-0">Yes, you can run unit tests and view the results directly within the app. The integrated testing <br> features allow for a streamlined .</p>
+        <!-- card section -->
+        <section>
+            <!-- card container  -->
+              <!-- spinner  -->
+              <div id="loadSpinner" class="text-center mt-10 lg:mt-20 hidden">
+                <span class="loading loading-bars loading-lg"></span>
+             </div>
+            <div class="mt10 lg:mt-20 grid grid-cols-1 lg:flex justify-between">
+               
+                <!-- main card -->
+                 <div id="cardContainer" class="w-[100%] lg:w-[60%] space-y-5">
+                <!-- <div class="bg-gray-200 flex p-5 rounded-xl">
+                     img  -->
+                    <!-- <div class="mr-7 relative w-20 h-10 lg:h-20 rounded-full bg-red-500"><img src="" alt=""></div> -->
+                    <!-- active status -->
+                     <div id="active" class="bg-green-500 h-3  lg:h-5 w-3 lg:w-5 rounded-full absolute ml-7 lg:ml-14"> 
+                        
+                    </div>
+                
+            </div> 
+                <!-- mark as card -->
+                <div id="mark-As" class="bg-gray-200 w-[100%] lg:w-[30%] h-[100%] lg:h-full mt-10 mb-7 lg:mb-0 lg:mt-0 rounded-2xl space-y-4 lg:space-y-7 p-5">
+                    
+                </div>
+            </div>
+        </section>
+
+        <!-- join section -->
+         <section style="background-image: url(./images/Rectangle\ 1.png);" class="bg-no-repeat grid grid-cols-1 lg:flex items-center justify-between mt-10 lg:mt-20 w-full p-10 lg:p-20 h-full space-y-4 space-y-0 lg:h-96 rounded-3xl">
+            <div class="text-white space-y-8">
+                <h1 class="textxl lg:text-3xl font-bold">Join Our Forum</h1>
+                <p>Share your favorite opinion and win and wp forum coffee mug! Yes, you can <br> run unit tests and view the results directly within the app. </p>
+                <button class="btn bg-[#797DFC] text-white border-none text-xl">Register Now</button>
+            </div>
+            <div class=""><img src="./images/joinforum.png" alt=""></div>
+         </section>
+
+         <!-- latets potest  -->
+
+         <h1 class="text-xl lg:text-2xl text-center font-bold mt-10 lg:mt-20 my-7">Latest Posts</h1>
+         <p class="text-center mb-5">Yes, you can run unit tests and view the results directly within the app. The <br> integrated testing features allow for a streamlined .</p>
+
+         <!-- latest section -->
+          <section id="latest-container" class="grid col-span-1 gap-5 md:grid-cols-2 lg:grid-cols-3 mt-9 lg:mt-14">
+            <!-- card 1 -->
+            <!-- <div class="card bg-base-100 shadow-xl">
+                <figure class="px-10 pt-10">
+                  <img
+                    src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+                    alt="Shoes"
+                    class="rounded-xl" />
+                </figure>
+                <div class="card-body ">
+                    date 
+                  <div class="flex space-x-1">
+                    <img  src="./images/Frame.png " alt="">
+                    <span>date</span>
+                    </div>
+                    <h1 class="text-xl font-bold">What will a mars habitat force that impact in our daily life!!!</h1>
+                  <p>Yes, you can run unit tests and view the results directly within the app. </p>
+                  <div class="card-actions ">
+                    <div class="h-5 w-5 bg-yellow-400"><img src="" alt=""></div>
+                    <div><h6 class="text-xs font-bold">Dianne Russell</h6><span class="opaci0.5 text-xs">
+                        ROR Developer
+                    </span></div>
+                  </div>
+                </div>
+              </div> -->
+
+              <!-- card 2 -->
+              <!-- <div class="card bg-base-100 shadow-xl">
+                <figure class="px-10 pt-10">
+                  <img
+                    src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+                    alt="Shoes"
+                    class="rounded-xl" />
+                </figure>
+                <div class="card-body ">
+                    date 
+                  <div class="flex space-x-1">
+                    <img  src="./images/Frame.png " alt="">
+                    <span>date</span>
+                    </div>
+                    <h1 class="text-xl font-bold">What will a mars habitat force that impact in our daily life!!!</h1>
+                  <p>Yes, you can run unit tests and view the results directly within the app. </p>
+                  <div class="card-actions ">
+                    <div class="h-5 w-5 bg-yellow-400"><img src="" alt=""></div>
+                    <div><h6 class="text-xs font-bold">Dianne Russell</h6><span class="opaci0.5 text-xs">
+                        ROR Developer
+                    </span></div>
+                  </div>
+                </div>
+              </div> -->
+
+              <!-- card 3 -->
+              <!-- <div class="card bg-base-100 shadow-xl">
+                <figure class="px-10 pt-10">
+                  <img
+                    src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+                    alt="Shoes"
+                    class="rounded-xl" />
+                </figure>
+                <div class="card-body ">
+                    date 
+                  <div class="flex space-x-1">
+                    <img  src="./images/Frame.png " alt="">
+                    <span>date</span>
+                    </div>
+                    <h1 class="text-xl font-bold">What will a mars habitat force that impact in our daily life!!!</h1>
+                  <p>Yes, you can run unit tests and view the results directly within the app. </p>
+                  <div class="card-actions ">
+                    <div class="h-5 w-5 bg-yellow-400"><img src="" alt=""></div>
+                    <div><h6 class="text-xs font-bold">Dianne Russell</h6><span class="opaci0.5 text-xs">
+                        ROR Developer
+                    </span></div>
+                  </div>
+                </div>
+              </div> -->
+          </section>
+          <!-- output  -->
+
+          <!-- <div class="bg-green-500 w-[30%] flex justify-between p-3 rounded-xl lg:p-7 items-center">
+            <div class="text-xl font-bold"><h3>amar shonaar bangla ami toami valobashi</h3></div>
+            <div class="flex space-x-2 items-center">
+                <img class="w-5 object-contain" src="./images/tabler-icon-eye.png" alt="">
+                <span>3454</span>
+            </div>
+          </div> -->
+    
+
+    </main>
+    <footer class="bg-gray-200 mt-10 lg:mt-20">
+        <div class="p-14 lg:p-36 space-y-6 text-center">
+            <h1 class="text-xl lg:text-2xl font-bold">ReTro</h1>
+            <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has root      <br>         s in a piece of classical Latin literature from 45 BC</p>
+            <div class="flex items-center justify-center space-x-6">
+                <div><img src="./images/2.png" alt=""></div>
+                <div><img src="./images/3.png" alt=""></div>
+                <div><img src="./images/4.png" alt=""></div>
+                
+            </div>
+            
+            <p class="opacity-0.1 mt-5">2017, All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>
